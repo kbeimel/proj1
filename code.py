@@ -32,7 +32,7 @@ class EStack():
             self.data = self.data + nu_d
         else: 
             self.data[self.currentpointer]= x
-            self.currentpointer += 1; 
+            self.currentpointer += 1 
     
 
     # Pop an integer off the stack  but do not return it.
