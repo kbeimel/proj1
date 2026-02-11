@@ -40,6 +40,7 @@ class EStack():
 
     def espop_quiet(self):
         self.data[self.currentpointer-1]=None 
+        self.currentpointer -= 1 
 
     # Pop an integer off the stack and return it.
 
