@@ -25,7 +25,7 @@ class EStack():
 
     def copycopy (lis:list, nu_l:int ):
         mlis = lis[:]
-        n = nu_l - len(lis) 
+        n = nu_l - len(lis)-1 
         for i in range (0, n): 
             mlis.append(None)
         return mlis
