@@ -33,7 +33,7 @@ class EStack():
     def espush(self,x:int):
         # The next line is just to make the code run.
         # Remove it and replace with your code.
-        if self.currentpointer >= len(self.data) : 
+        if self.currentpointer > len(self.data) : 
             nu_le = len(self.data) * self.m + self.b 
             self.currentpointer += 1 
             self.data = copycopy(self.data, nu_le)
