@@ -41,7 +41,7 @@ class EStack():
     def espop_quiet(self):
         self.currentpointer -= 1
         guard = ((len(self.data) - self.b) // self.m)
-        while self.currentpointer > guard  :
+        if ((len(self.data)>guard) and (guard>=self.currentpointer))  :
             self.data.pop()
         self.data[self.currentpointer]=None 
 
@@ -51,7 +51,7 @@ class EStack():
         self.currentpointer -= 1
         r = self.data[self.currentpointer]
         guard = ((len(self.data) - self.b) // self.m)
-        while self.currentpointer > guard  :
-             self.data.pop()
         self.data[self.currentpointer]=None 
+        if ((len(self.data)>guard) and (guard>=self.currentpointer))  :
+             self.data.pop()
         return r
