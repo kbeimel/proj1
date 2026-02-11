@@ -25,7 +25,7 @@ class EStack():
 
 
     def espush(self,x:int):
-        if self.currentpointer == len(self.data) : 
+        if self.currentpointer > len(self.data) : 
             nu_le = (len(self.data) * self.m) + self.b 
             nu_d = [None] * (nu_le - len(self.data))
             self.data = self.data + nu_d
