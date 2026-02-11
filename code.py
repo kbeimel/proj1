@@ -40,7 +40,7 @@ class EStack():
 
     def espop_quiet(self):
         self.currentpointer -= 1
-        while self.currentpointer < ((len(self.data) - self.b) // self.m) :
+        while self.currentpointer > ((len(self.data) - self.b) // self.m) :
             self.data.pop()
         self.data[self.currentpointer]=None 
 
@@ -49,7 +49,7 @@ class EStack():
     def espop(self):
         self.currentpointer -= 1
         r = self.data[self.currentpointer]
-        while self.currentpointer < ((len(self.data) - self.b) // self.m) :
+        while self.currentpointer > ((len(self.data) - self.b) // self.m) :
             self.data.pop()
         self.data[self.currentpointer]=None 
         return r
