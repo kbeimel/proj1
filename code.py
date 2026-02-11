@@ -25,7 +25,7 @@ class EStack():
 
 
     def espush(self,x:int):
-        if self.currentpointer > len(self.data) : 
+        if self.currentpointer == len(self.data) : 
             nu_le = (len(self.data) * self.m) + self.b 
             nu_d = [None] * (nu_le - len(self.data))
             self.data = self.data + nu_d
@@ -40,6 +40,9 @@ class EStack():
 
     def espop_quiet(self):
         self.currentpointer -= 1
+        if self.currentpointer <= (len(self.data) - self.b) // self.m :
+            nu_d= self.data[:self.currentpointer]
+            self.data = nu_d
         self.data[self.currentpointer]=None 
 
     # Pop an integer off the stack and return it.
@@ -47,5 +50,8 @@ class EStack():
     def espop(self):
         self.currentpointer -= 1
         r = self.data[self.currentpointer]
-        self.data[self.currentpointer]= None # You'll have to fix this!
+        if self.currentpointer <= (len(self.data) - self.b) // self.m :
+            nu_d= self.data[:self.currentpointer]
+            self.data = nu_d
+        self.data[self.currentpointer]=None 
         return r
