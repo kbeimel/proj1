@@ -38,6 +38,7 @@ class EStack():
             self.currentpointer = len(self.data)
             self.data = copycopy(self, nu_le)
         else: 
+            self.data.insert(self.currentpointer, x)
             self.currentpointer += 1; 
     
 
