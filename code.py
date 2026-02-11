@@ -27,9 +27,10 @@ class EStack():
     def espush(self,x:int):
         if self.currentpointer == len(self.data) : 
             nu_le = (len(self.data) * self.m) + self.b 
-            self.currentpointer += 1 
             nu_d = [None] * (nu_le - len(self.data))
             self.data = self.data + nu_d
+            self.data[self.currentpointer]= x
+            self.currentpointer += 1 
         else: 
             self.data[self.currentpointer]= x
             self.currentpointer += 1 
