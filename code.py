@@ -39,9 +39,7 @@ class EStack():
     # Pop an integer off the stack  but do not return it.
 
     def espop_quiet(self):
-        # The next line is just to make the code run.
-        # Remove it and replace with your code.
-        print('hi')
+        self.data[self.currentpointer-1]=None 
 
     # Pop an integer off the stack and return it.
 
