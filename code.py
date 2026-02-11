@@ -28,22 +28,20 @@ class EStack():
         if self.currentpointer == len(self.data) : 
             nu_le = (len(self.data) * self.m) + self.b 
             nu_d = [None] * (nu_le - len(self.data))
-            self.data = self.data + nu_d
-            self.data[self.currentpointer]= x
-            self.currentpointer += 1 
-        else: 
-            self.data[self.currentpointer]= x
-            self.currentpointer += 1 
+            self.data = self.data + nu_d         
+        self.data[self.currentpointer]= x
+        self.currentpointer += 1 
     
 
     # Pop an integer off the stack  but do not return it.
 
     def espop_quiet(self):
         self.currentpointer -= 1
-        guard = ((len(self.data) - self.b) // self.m)
-        if ((len(self.data)>guard) and (guard>self.currentpointer))  :
-            self.data.pop()
         self.data[self.currentpointer]=None 
+        guard = ((len(self.data) - self.b) // self.m)
+        if len(self.data)<=guard :
+            nu_l = max(guard, self.currentpointer)
+            self.data = self.data[:nu_l]
 
     # Pop an integer off the stack and return it.
 
@@ -52,6 +50,7 @@ class EStack():
         r = self.data[self.currentpointer]
         guard = ((len(self.data) - self.b) // self.m)
         self.data[self.currentpointer]=None 
-        if ((len(self.data)>guard) and (guard>self.currentpointer))  :
-             self.data.pop()
+         if len(self.data)<=guard :
+            nu_l = max(guard, self.currentpointer)
+            self.data = self.data[:nu_l]
         return r
