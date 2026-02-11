@@ -39,9 +39,8 @@ class EStack():
         self.currentpointer -= 1
         self.data[self.currentpointer]=None 
         guard = ((len(self.data) - self.b) // self.m)
-        if len(self.data)<=guard :
-            nu_l = max(guard, self.currentpointer)
-            self.data = self.data[:nu_l]
+        if self.currentpointer<=guard :
+            self.data = self.data[:guard]
 
     # Pop an integer off the stack and return it.
 
