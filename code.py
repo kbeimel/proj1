@@ -23,21 +23,15 @@ class EStack():
 
     # Push an integer onto the stack.
 
-    def copycopy (lis:list, nu_l:int ):
-        mlis = lis[:]
-        n = nu_l - len(lis)-1 
-        for i in range (0, n): 
-            mlis.append(None)
-        return mlis
 
     def espush(self,x:int):
         if self.currentpointer == len(self.data) : 
             nu_le = (len(self.data) * self.m) + self.b 
             self.currentpointer += 1 
-            nu_d = self.data + [None] * (nu_le - len(self.data))
-            self.data = nu_d
+            nu_d = [None] * (nu_le - len(self.data))
+            self.data = self.data + nu_d
         else: 
-            self.data.insert(self.currentpointer, x)
+            self.data[self.currentpointer]= x
             self.currentpointer += 1; 
     
 
