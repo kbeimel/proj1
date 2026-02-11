@@ -27,7 +27,7 @@ class EStack():
         mlis = self.data[:]
         n = nu_l - len(self.data) 
         for i in range (0, n): 
-            mlis.append(None)
+            mlis.append()
         return mlis
 
     def espush(self,x:int):
