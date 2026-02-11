@@ -24,20 +24,21 @@ class EStack():
     # Push an integer onto the stack.
 
     def copycopy (self, nu_l:int ):
-        
         mlis = self.data[:]
         n = nu_l - len(self.data) 
         for i in range (0, n): 
             mlis.append(None)
-mlis
+        return mlis
 
     def espush(self,x:int):
         # The next line is just to make the code run.
         # Remove it and replace with your code.
         if self.currentpointer >= len(self.data) : 
-            nu_l = len(self.data) * self.m + self.b 
-            myli = copycopy(self, nu_l)
-else: 
+            nu_le = len(self.data) * self.m + self.b 
+            self.currentpointer = len(self.data)
+            self.data = copycopy(self, nu_le)
+        else: 
+            self.currentpointer += 1; 
     
 
     # Pop an integer off the stack  but do not return it.
