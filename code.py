@@ -31,12 +31,11 @@ class EStack():
         return mlis
 
     def espush(self,x:int):
-        # The next line is just to make the code run.
-        # Remove it and replace with your code.
-        if self.currentpointer >= len(self.data) -1 : 
-            nu_le = len(self.data) * self.m + self.b 
+        if self.currentpointer == len(self.data) : 
+            nu_le = (len(self.data) * self.m) + self.b 
             self.currentpointer += 1 
-            self.data = copycopy(self.data, nu_le)
+            nu_d = self.data + [None] * (nu_le - len(self.data))
+            self.data = nu_d
         else: 
             self.data.insert(self.currentpointer, x)
             self.currentpointer += 1; 
