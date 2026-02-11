@@ -35,7 +35,7 @@ class EStack():
         # Remove it and replace with your code.
         if self.currentpointer >= len(self.data) : 
             nu_le = len(self.data) * self.m + self.b 
-            self.currentpointer = len(self.data)
+            self.currentpointer = len(self.data)-1
             self.data = copycopy(self.data, nu_le)
         else: 
             self.data.insert(self.currentpointer, x)
