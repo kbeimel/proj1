@@ -43,6 +43,7 @@ class EStack():
         if self.currentpointer <= ((len(self.data) - self.b) // self.m) :
             nu_d= self.data[:self.currentpointer]
             self.data = nu_d
+            print("q")
         self.data[self.currentpointer]=None 
 
     # Pop an integer off the stack and return it.
@@ -53,5 +54,6 @@ class EStack():
         if self.currentpointer <= ((len(self.data) - self.b) // self.m) :
             nu_d= self.data[:self.currentpointer]
             self.data = nu_d
+            print(r)
         self.data[self.currentpointer]=None 
         return r
