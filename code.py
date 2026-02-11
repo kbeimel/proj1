@@ -50,7 +50,7 @@ class EStack():
         r = self.data[self.currentpointer]
         guard = ((len(self.data) - self.b) // self.m)
         self.data[self.currentpointer]=None 
-         if len(self.data)<=guard :
+        if len(self.data)<=guard :
             nu_l = max(guard, self.currentpointer)
             self.data = self.data[:nu_l]
         return r
