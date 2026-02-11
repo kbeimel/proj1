@@ -12,10 +12,10 @@ class EStack():
     def  __init__(self,
                   m : int,
                   b : int):
-        self.m               = m
-        self.b               = b
-        self.currentpointer  = 0
-        self.data            = [None]
+        self.m               = m #factor to multiply by
+        self.b               = b #bonus spots added 
+        self.currentpointer  = 0 #first empty position
+        self.data            = [None] #list 
 
     # DO NOT MODIFY!
     def esdump(self) -> str:
@@ -23,10 +23,22 @@ class EStack():
 
     # Push an integer onto the stack.
 
+    def copycopy (self, nu_l:int ):
+        
+        mlis = self.data[:]
+        n = nu_l - len(self.data) 
+        for i in range (0, n): 
+            mlis.append(None)
+mlis
+
     def espush(self,x:int):
         # The next line is just to make the code run.
         # Remove it and replace with your code.
-        print('hi')
+        if self.currentpointer >= len(self.data) : 
+            nu_l = len(self.data) * self.m + self.b 
+            myli = copycopy(self, nu_l)
+else: 
+    
 
     # Pop an integer off the stack  but do not return it.
 
